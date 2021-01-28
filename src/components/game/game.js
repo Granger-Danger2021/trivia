@@ -59,7 +59,9 @@ function Game(props) {
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src={props.questions[props.user.index].img} alt={props.questions[props.user.index].question} />
+                {props.questions.length ?
+                  <img src={props.questions[props.user.index].img} alt={props.questions[props.user.index].question} />
+                  : ''}
               </div>
               <div class="flip-card-back">
                 <Grid item id={props.user.index + 'GridItem'} xs={12}>
@@ -84,13 +86,27 @@ function Game(props) {
           :
 
           <Grid item id="score" xs={12}>
-            {props.user.score <= 3 ? <p>You're a muggle! Did you even watch the movies?</p>
-              : props.user.score <= 5 ? <p>Hey there, Filch. You're a total squib!</p>
-                : props.user.score <= 7 ? <p>Hmmm... you just barely passed, Ron Weasley!</p>
-                  : props.user.score <= 9 ? <p>Wow! you really know your stuff. You passed your O.W.Ls with flying colors!</p> :
-                    <p>OMG! Hermione Granger has graced us with her presence! Thanks for playing, Hermione.</p>
-            }
-            <p>! You scored: {props.user.score}/10.</p>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <Card className="root">
+                    <CardContent id="results">
+                      {props.user.score <= 3 ? <p>You're a muggle! Did you even watch the movies?</p>
+                        : props.user.score <= 5 ? <p>Hey there, Filch. You're a total squib!</p>
+                          : props.user.score <= 7 ? <p>Hmmm... you just barely passed, Ron Weasley!</p>
+                            : props.user.score <= 9 ? <p>Wow! you really know your stuff. You passed your O.W.Ls with flying colors!</p> :
+                              <p>OMG! Hermione Granger has graced us with her presence! Thanks for playing, Hermione.</p>
+                      }
+                      <h3>You scored: {props.user.score}/10</h3>
+                    </CardContent>
+                  </Card>
+                  </div>
+                  <div class="flip-card-back" id="thankYou">
+                      <h4>Thank you for playing!! Move your cursor away to see your score!</h4>
+                  </div>
+
+              </div>
+            </div>
           </Grid>
         }
 
