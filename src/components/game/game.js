@@ -59,7 +59,10 @@ function Game(props) {
           <div class="flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <img src={props.questions[props.user.index].img} alt={props.questions[props.user.index].question} />
+                {props.questions.length ?
+                  <img src={props.questions[props.user.index].img} height="300px" width="300px" alt={props.questions[props.user.index].question} />
+                  :
+                  <span></span>}
               </div>
               <div class="flip-card-back">
                 <Grid item id={props.user.index + 'GridItem'} xs={12}>
@@ -82,7 +85,6 @@ function Game(props) {
             </div>
           </div>
           :
-
           <Grid item id="score" xs={12}>
             {props.user.score <= 3 ? <p>You're a muggle! Did you even watch the movies?</p>
               : props.user.score <= 5 ? <p>Hey there, Filch. You're a total squib!</p>
@@ -90,10 +92,9 @@ function Game(props) {
                   : props.user.score <= 9 ? <p>Wow! you really know your stuff. You passed your O.W.Ls with flying colors!</p> :
                     <p>OMG! Hermione Granger has graced us with her presence! Thanks for playing, Hermione.</p>
             }
-            <p>! You scored: {props.user.score}/10.</p>
+            <p>You scored: {props.user.score}/10.</p>
           </Grid>
         }
-
       </Grid>
     </div >
   )
