@@ -30,3 +30,14 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+
+/// left to do:
+
+/*
+1- make the presentation
+2- flip cards (tina) for the questions
+3- general css styling/fonts/background colors
+4- when quiz is done, display the answers??
+5- when quiz is done, customize our message based on their score
+*/
