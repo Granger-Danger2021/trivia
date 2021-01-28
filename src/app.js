@@ -1,12 +1,15 @@
-import './app.scss';
-import Game from './components/game/game';
+import './app.css';
+import Header from './components/header/header'
+import Footer from './components/footer/footer'
+import Game from './components/game/game'
 
 function App() {
   return (
     <div className="App">
-      <h1>we are alive!!</h1>
+      <Header />
       <Game />
-    </div>
+      <Footer />
+    </div >
   );
 }
 
