@@ -2,7 +2,7 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
+import './header.scss'
 
 function Header(props) {
   return (
@@ -10,7 +10,7 @@ function Header(props) {
       <AppBar position="static" className="navbar">
         <div className="navbar">
           <Toolbar>
-            <Typography variant="h4">Storefont</Typography>
+            <Typography variant="h4">Granger Danger</Typography>
             <div id="cart">
             </div>
           </Toolbar>
