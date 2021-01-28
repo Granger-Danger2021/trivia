@@ -2,16 +2,17 @@
   text-align: left;
 }
 .flip-card {
+
   background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
+  width: 500px;
+  height: 300pxpx;
+  border: none;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 .flip-card-inner {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 300px;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
@@ -21,22 +22,33 @@
 }
 .flip-card-front, .flip-card-back {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 300px;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
 .flip-card-front {
-  background-color: #bbb;
+  background-color: none;
   color: black;
+  img{
+    height: 100%;
+    width: auto;
+  }
 }
 .flip-card-back {
-  background-color: dodgerblue;
+  // background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
 }
 #grid{
-  margin-left: auto;
-  margin-right: auto;
+  margin: 100px 30% 200px 30%;
   width: 300px;
+}
+#thankYou{
+  background-color: white;
+  color: black;
+  height: 100px;
+}
+#results{
+  text-align: center;
 }
