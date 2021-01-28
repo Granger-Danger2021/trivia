@@ -1,26 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import {addToScore} from '../../store/users'
+import './game.scss'
+import { get } from '../../store/trivia';
+import { addToScore } from '../../store/users'
 
-const mapDispatchToProps = {addToScore};
+const mapDispatchToProps = { get, addToScore };
 
 function Game(props) {
-  console.log(props.user)
+  const getQuestions = () => {
+    props.get();
+    console.log('after await', { props });
+  }
 
-  const handleClick = () =>{
+  useEffect(() => {
+    console.log('before use effect', props);
+    getQuestions();
+    console.log('after use effect', props);
+  }, []);
+
+
+  const handleClick = () => {
     props.addToScore()
   }
 
   return (
-    <>
-    <p>Your score is: {props.user.score}</p>
-    <button onClick={handleClick}>Gimme points!</button>
-    </>
-  );
+    <div id="game">
+      {props.questions.map(question => (
+        <div>{question.question}</div>
+      ))}
+      <p>Your score is: {props.user.score}</p>
+      <button onClick={handleClick}>Gimme points!</button>
+
+    </div>
+  )
 }
 
 const mapStateToProps = state => ({
-  user: state.users,
-});
+  questions: state.trivia.questions,
+  user: state.users
+})
 
-export default connect(mapStateToProps,mapDispatchToProps)(Game);
+export default connect(mapStateToProps, mapDispatchToProps)(Game);
