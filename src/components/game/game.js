@@ -66,7 +66,7 @@ function Game(props) {
               <div class="flip-card-back">
                 <Grid item id={props.user.index + 'GridItem'} xs={12}>
                   <Card id={props.user.index + 'Card'} data-testid={props.user.index + 'Card'} className="root" variant="outlined">
-                    <CardContent id={props.user.index + 'CardContent'}>
+                    <CardContent class="backContent" id={props.user.index + 'CardContent'}>
                       <Typography className="question" color="textSecondary" gutterBottom>
                         {props.questions.length ? props.questions[props.user.index].question : <p></p>}
                       </Typography>
