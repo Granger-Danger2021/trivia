@@ -84,7 +84,6 @@ function Game(props) {
             </div>
           </div>
           :
-
           <Grid item id="score" xs={12}>
             <div class="flip-card">
               <div class="flip-card-inner">
@@ -100,16 +99,15 @@ function Game(props) {
                       <h3>You scored: {props.user.score}/10</h3>
                     </CardContent>
                   </Card>
-                  </div>
-                  <div class="flip-card-back" id="thankYou">
-                      <h4>Thank you for playing!! Move your cursor away to see your score!</h4>
-                  </div>
+                </div>
+                <div class="flip-card-back" id="thankYou">
+                  <h4>Thank you for playing!! Move your cursor away to see your score!</h4>
+                </div>
 
               </div>
             </div>
           </Grid>
         }
-
       </Grid>
     </div >
   )
