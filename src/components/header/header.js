@@ -10,7 +10,7 @@ function Header(props) {
       <AppBar position="static" className="navbar">
         <div className="navbar">
           <Toolbar>
-            <Typography variant="h4">Granger Danger</Typography>
+            <Typography variant="h4">Harry Potter Trivia Game!</Typography>
             <div id="cart">
             </div>
           </Toolbar>
